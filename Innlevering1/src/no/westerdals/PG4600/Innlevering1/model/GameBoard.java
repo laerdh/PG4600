@@ -58,9 +58,13 @@ public class GameBoard {
         return checkEqualCells(topLeft, middle, bottomRight) || checkEqualCells(topRight, middle, bottomLeft);
     }
 
+    public boolean checkWin() {
+        return checkWinVertical() || checkWinHorizontal() || checkWinDiagonal();
+    }
+
     public boolean markCell(Player player, int row, int column) {
         Cell cell = getCell(row, column);
-            if (!cell.isTaken() && !checkBoardFull()) {
+            if (!cell.isTaken() && !isFull()) {
                 cell.setSymbol(player.getSymbol());
                 cellsTaken++;
                 return true;
@@ -77,7 +81,7 @@ public class GameBoard {
         return board[row][column];
     }
 
-    public boolean checkBoardFull() {
+    public boolean isFull() {
         return cellsTaken == (ROWS * COLUMNS);
     }
 

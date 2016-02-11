@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Innlevering1</string>
+    <string name="playerX">PlayerX</string>
+    <string name="playerO">PlayerO</string>
+    <string name="score">Wins:</string>
+    <string name="emptyCell"></string>
+    <string name="cellTakenX">X</string>
+    <string name="cellTakenO">O</string>
 </resources>

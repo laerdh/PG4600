@@ -129,7 +129,7 @@ public class GameBoardTest {
 
     @Test
     public void testCheckBoardNotFull() throws Exception {
-        assertFalse(board.checkBoardFull());
+        assertFalse(board.isFull());
     }
 
     @Test
@@ -141,7 +141,7 @@ public class GameBoardTest {
                 assertTrue("Cant place marker at row " + i + ", column: " + j, board.markCell(player1, i, j));
             }
         }
-        assertTrue(board.checkBoardFull());
+        assertTrue(board.isFull());
     }
 
 }

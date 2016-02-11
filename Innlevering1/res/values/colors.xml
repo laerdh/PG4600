@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="light_blue" type="color">#E1F5FE</item>
+    <item name="black" type="color">#000000</item>
+    <item name="white" type="color">#ffffff</item>
+    <item name="dark_blue" type="color">#0091EA</item>
+    <item name="table_border" type="color">#0277BD</item>
+</resources>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:padding="10dp">
+
+    <TableLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:stretchColumns="*">
+        <TableRow>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playerX"
+                    android:textSize="30sp"
+                    android:id="@+id/player1"
+                    android:layout_gravity="start"
+                    android:padding="10dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playerO"
+                    android:textSize="30sp"
+                    android:id="@+id/player2"
+                    android:layout_gravity="end"
+                    android:padding="10dp"/>
+        </TableRow>
+        <TableRow
+            android:padding="5dp">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score"
+                    android:id="@+id/score1"
+                    android:layout_gravity="start"
+                    android:padding="5dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score"
+                    android:id="@+id/score2"
+                    android:layout_gravity="end"
+                    android:padding="5dp"/>
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*"
+                android:background="@color/table_border"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0" android:id="@+id/row0">
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/dark_blue"
+                        android:padding="40dp" android:id="@+id/txtCell00" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/light_blue"
+                        android:padding="40dp" android:id="@+id/txtCell01" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/dark_blue"
+                        android:padding="40dp" android:id="@+id/txtCell02" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0" android:id="@+id/row1">
+
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/light_blue"
+                        android:padding="40dp" android:id="@+id/txtCell10" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/dark_blue"
+                        android:padding="40dp" android:id="@+id/txtCell11" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/light_blue"
+                        android:padding="40dp" android:id="@+id/txtCell12" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0" android:id="@+id/row2">
+
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/dark_blue"
+                        android:padding="40dp" android:id="@+id/txtCell20" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/light_blue"
+                        android:padding="40dp" android:id="@+id/txtCell21" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+                <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="@string/emptyCell"
+                        android:background="@color/dark_blue"
+                        android:padding="40dp" android:id="@+id/txtCell22" android:textAlignment="center"
+                        android:theme="@style/Mark"/>
+
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>
