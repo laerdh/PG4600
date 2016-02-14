@@ -14,5 +14,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.GameActivity" android:label="TicTacToe"/>
+        <activity android:name=".activities.ResultActivity"/>
     </application>
 </manifest>

@@ -9,6 +9,7 @@ import android.widget.Toast;
 import no.westerdals.PG4600.Innlevering1.R;
 import no.westerdals.PG4600.Innlevering1.model.GameBoard;
 import no.westerdals.PG4600.Innlevering1.model.Player;
+import no.westerdals.PG4600.Innlevering1.model.Score;
 
 /**
  * Created by larsdahl on 10.02.2016.
@@ -22,6 +23,7 @@ public class GameActivity extends Activity {
     private GameBoard gameBoard;
     private TextView[][] guiCells = new TextView[ROWS][CELLS];
     private TextView player1, player2;
+    private TextView txtScoreX, txtScoreO;
     private Player playerX, playerO;
     private boolean turn = true;
 
@@ -32,8 +34,9 @@ public class GameActivity extends Activity {
 
         // Gather widgets (Setup gameboard, players etc)
         initGameBoard();
-        initPlayerView();
         initPlayers();
+        initPlayerView();
+        initScoreView();
         initCells();
     }
 
@@ -64,39 +67,60 @@ public class GameActivity extends Activity {
     private void initPlayerView() {
         player1 = (TextView) findViewById(R.id.player1);
         player2 = (TextView) findViewById(R.id.player2);
+
+        // Set player names
+        player1.setText(playerX.getPlayerName());
+        player2.setText(playerO.getPlayerName());
+    }
+
+    private void initScoreView() {
+        txtScoreX = (TextView) findViewById(R.id.txtScoreX);
+        txtScoreO = (TextView) findViewById(R.id.txtScoreO);
+
+        txtScoreX.setText(String.valueOf(Score.scoreX));
+        txtScoreO.setText(String.valueOf(Score.scoreO));
     }
 
     private void initPlayers() {
-        playerX = new Player(player1.getText().toString(), PLAYER_X);
-        playerO = new Player(player2.getText().toString(), PLAYER_O);
+        // Get player names from GameActivity
+        playerX = new Player(getIntent().getExtras().getString("player1"), PLAYER_X);
+        playerO = new Player(getIntent().getExtras().getString("player2"), PLAYER_O);
     }
 
     private void updateCell(int row, int column) {
         if (turn) {
-            gameBoard.markCell(playerX, row, column);
-            if (gameBoard.checkWin()) {
-                showToast("Player X won!");
-                reloadGameActivity();
+            if (gameBoard.markCell(playerX, row, column)) {
+                if (gameBoard.checkWin()) {
+                    showMessage(playerX.getPlayerName() + " won!");
+                    updateScore();
+                    reloadGameActivity();
+                }
+                if (gameBoard.isFull()) {
+                    showMessage("Draw!");
+                    reloadGameActivity();
+                }
+                guiCells[row][column].setText("X");
+                turn = false;
+            } else {
+                showMessage("Already taken!");
             }
-            if (gameBoard.isFull()) {
-                showToast("Draw!");
-                reloadGameActivity();
-            }
-            guiCells[row][column].setText("X");
-            turn = false;
 
         } else {
-            gameBoard.markCell(playerO, row, column);
-            if (gameBoard.checkWin()) {
-                showToast("Player O won!");
-                reloadGameActivity();
+            if (gameBoard.markCell(playerO, row, column)) {
+                if (gameBoard.checkWin()) {
+                    showMessage(playerO.getPlayerName() + " won!");
+                    updateScore();
+                    reloadGameActivity();
+                }
+                if (gameBoard.isFull()) {
+                    showMessage("Draw!");
+                    reloadGameActivity();
+                }
+                guiCells[row][column].setText("O");
+                turn = true;
+            } else {
+                showMessage("Already taken!");
             }
-            if (gameBoard.isFull()) {
-                showToast("Draw!");
-                reloadGameActivity();
-            }
-            guiCells[row][column].setText("O");
-            turn = true;
         }
     }
 
@@ -105,8 +129,18 @@ public class GameActivity extends Activity {
         startActivity(getIntent());
     }
 
-    private void showToast(String message) {
+    private void showMessage(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void updateScore() {
+        if (turn) {
+            Score.scoreX++;
+            txtScoreX.setText(String.valueOf(Score.scoreX));
+        } else {
+            Score.scoreO++;
+            txtScoreO.setText(String.valueOf(Score.scoreO));
+        }
     }
 
     // Helper class to tag GUI cells

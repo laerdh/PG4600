@@ -43,7 +43,24 @@
                     android:text="@string/score"
                     android:id="@+id/score2"
                     android:layout_gravity="end"
-                    android:padding="5dp"/>
+                    android:paddingRight="20dp"/>
+        </TableRow>
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtScoreX"
+                    android:layout_column="0"
+                    android:layout_gravity="start" android:paddingLeft="10dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtScoreO"
+                    android:layout_column="1"
+                    android:layout_gravity="end"
+                    android:paddingRight="10dp"/>
         </TableRow>
     </TableLayout>
     <LinearLayout
@@ -66,25 +83,25 @@
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
                         android:background="@color/dark_blue"
-                        android:padding="40dp" android:id="@+id/txtCell00" android:textAlignment="center"
+                        android:id="@+id/txtCell00"
+                        android:gravity="center"
                         android:theme="@style/Mark"/>
 
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
+                        android:gravity="center"
                         android:background="@color/light_blue"
-                        android:padding="40dp" android:id="@+id/txtCell01" android:textAlignment="center"
+                        android:id="@+id/txtCell01"
                         android:theme="@style/Mark"/>
 
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
+                        android:gravity="center"
                         android:background="@color/dark_blue"
-                        android:padding="40dp" android:id="@+id/txtCell02" android:textAlignment="center"
+                        android:id="@+id/txtCell02"
                         android:theme="@style/Mark"/>
 
             </TableRow>
@@ -96,25 +113,25 @@
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
                         android:background="@color/light_blue"
-                        android:padding="40dp" android:id="@+id/txtCell10" android:textAlignment="center"
+                        android:gravity="center"
+                        android:id="@+id/txtCell10"
                         android:theme="@style/Mark"/>
 
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
+                        android:gravity="center"
                         android:background="@color/dark_blue"
-                        android:padding="40dp" android:id="@+id/txtCell11" android:textAlignment="center"
+                        android:id="@+id/txtCell11"
                         android:theme="@style/Mark"/>
 
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
+                        android:gravity="center"
                         android:background="@color/light_blue"
-                        android:padding="40dp" android:id="@+id/txtCell12" android:textAlignment="center"
+                        android:id="@+id/txtCell12"
                         android:theme="@style/Mark"/>
 
             </TableRow>
@@ -126,25 +143,25 @@
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
+                        android:gravity="center"
                         android:background="@color/dark_blue"
-                        android:padding="40dp" android:id="@+id/txtCell20" android:textAlignment="center"
+                        android:id="@+id/txtCell20"
                         android:theme="@style/Mark"/>
 
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
+                        android:gravity="center"
                         android:background="@color/light_blue"
-                        android:padding="40dp" android:id="@+id/txtCell21" android:textAlignment="center"
+                        android:id="@+id/txtCell21"
                         android:theme="@style/Mark"/>
 
                 <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:text="@string/emptyCell"
+                        android:gravity="center"
                         android:background="@color/dark_blue"
-                        android:padding="40dp" android:id="@+id/txtCell22" android:textAlignment="center"
+                        android:id="@+id/txtCell22"
                         android:theme="@style/Mark"/>
 
             </TableRow>
