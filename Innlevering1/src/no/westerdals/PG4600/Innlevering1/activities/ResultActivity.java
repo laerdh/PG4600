@@ -15,9 +15,7 @@ import no.westerdals.PG4600.Innlevering1.model.Scoreboard;
 import java.util.List;
 import java.util.Stack;
 
-/**
- * Created by larsdahl on 14.02.2016.
- */
+
 public class ResultActivity extends Activity {
     private ListView listView;
     private ArrayAdapter<String> adapter;

@@ -5,9 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by larsdahl on 10.02.2016.
- */
+
 public class CellTest {
 
     @Test

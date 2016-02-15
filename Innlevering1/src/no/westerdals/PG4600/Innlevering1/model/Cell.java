@@ -1,8 +1,6 @@
 package no.westerdals.PG4600.Innlevering1.model;
 
-/**
- * Created by larsdahl on 09.02.2016.
- */
+
 public class Cell {
     private static final char EMPTY_CELL_TAG = ' ';
     private char symbol;

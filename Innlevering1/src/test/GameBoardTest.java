@@ -8,9 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by larsdahl on 10.02.2016.
- */
+
 public class GameBoardTest {
     private static int COLS = 3;
     private static int ROWS = 3;
