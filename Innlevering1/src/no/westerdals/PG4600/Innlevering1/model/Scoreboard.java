@@ -27,7 +27,7 @@ public class Scoreboard {
         date.setTimeZone(TimeZone.getTimeZone(timeZone));
         String localTime = date.format(currentLocalTime);
 
-        result += " - " + localTime;
+        result = localTime + " - " + result;
         results.add(result);
     }
 

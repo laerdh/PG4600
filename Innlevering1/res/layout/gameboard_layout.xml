@@ -7,7 +7,7 @@
     <TableLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="110dp"
             android:stretchColumns="*">
         <TableRow>
             <TextView
@@ -26,6 +26,17 @@
                     android:id="@+id/player2"
                     android:layout_gravity="end"
                     android:padding="10dp"/>
+        </TableRow>
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Large Text"
+                    android:gravity="center"
+                    android:id="@+id/txtStatus" android:layout_span="2"/>
         </TableRow>
     </TableLayout>
     <LinearLayout

@@ -21,7 +21,8 @@ public class GameActivity extends Activity {
 
     private GameBoard gameBoard;
     private TextView[][] guiCells;
-    private TextView player1, player2;
+    private TextView txtPlayerX, txtPlayerO;
+    private TextView txtStatus;
     private Player playerX, playerO;
     private boolean turn = true;
 
@@ -34,8 +35,10 @@ public class GameActivity extends Activity {
         initGameBoard();
         initPlayers();
         initPlayerView();
-        initCells();
+        initUICells();
 
+        // Updates GUI with who's turn
+        updateStatus();
     }
 
     @Override
@@ -68,7 +71,7 @@ public class GameActivity extends Activity {
         gameBoard = new GameBoard();
     }
 
-    private void initCells() {
+    private void initUICells() {
         int rows = gameBoard.getRows();
         int columns = gameBoard.getColumns();
 
@@ -94,16 +97,14 @@ public class GameActivity extends Activity {
     }
 
     private void initPlayerView() {
-        player1 = (TextView) findViewById(R.id.player1);
-        player2 = (TextView) findViewById(R.id.player2);
+        txtPlayerX = (TextView) findViewById(R.id.player1);
+        txtPlayerO = (TextView) findViewById(R.id.player2);
+        txtStatus = (TextView) findViewById(R.id.txtStatus);
 
         // Set player names
-        player1.setText(playerX.getPlayerName());
-        player2.setText(playerO.getPlayerName());
-
-        showMessage(playerX.getPlayerName() + "'s turn!");
+        txtPlayerX.setText(playerX.getPlayerName());
+        txtPlayerO.setText(playerO.getPlayerName());
     }
-
 
     private void initPlayers() {
         String symbolX = getResources().getString(R.string.playerX);
@@ -127,17 +128,14 @@ public class GameActivity extends Activity {
             guiCells[row][column].setText(String.valueOf(player.getSymbol()));
 
             if (gameBoard.checkWin()) {
-                showMessage(player.getPlayerName() + " won!");
                 logResult(turn ? Result.PLAYER_X_WIN : Result.PLAYER_O_WIN);
                 restartGame();
-            }
-
-            if (gameBoard.isFull()) {
+            } else if (gameBoard.isFull()) {
                 logResult(Result.TIE);
-                showMessage("Draw");
                 restartGame();
             }
             turn = !turn;
+            updateStatus();
         } else {
             showMessage("Already taken!");
         }
@@ -157,6 +155,8 @@ public class GameActivity extends Activity {
                         guiCells[i][j].setText("");
                     }
                 }
+
+                updateStatus();
             }
         }, RESTART_GAME_DELAY);
     }
@@ -180,6 +180,11 @@ public class GameActivity extends Activity {
 
     enum Result {
         PLAYER_X_WIN, PLAYER_O_WIN, TIE
+    }
+
+    private void updateStatus() {
+        String player = turn ? playerX.getPlayerName() : playerO.getPlayerName();
+        txtStatus.setText(player + "'s turn");
     }
 
     private void showMessage(String message) {
