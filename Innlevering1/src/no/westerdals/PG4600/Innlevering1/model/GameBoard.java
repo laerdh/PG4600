@@ -85,4 +85,12 @@ public class GameBoard {
         return cellsTaken == (ROWS * COLUMNS);
     }
 
+    public int getRows() {
+        return ROWS;
+    }
+
+    public int getColumns() {
+        return COLUMNS;
+    }
+
 }

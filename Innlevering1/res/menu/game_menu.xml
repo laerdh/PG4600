@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/itemNewgame"
+          android:title="@string/newgame"
+          android:showAsAction="never"
+    />
+    <item android:id="@+id/itemScoreboard"
+          android:title="@string/scoreboard"
+          android:orderInCategory="100"/>
+</menu>

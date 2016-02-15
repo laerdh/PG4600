@@ -7,7 +7,7 @@
     <TableLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="wrap_content"
             android:stretchColumns="*">
         <TableRow>
             <TextView
@@ -26,41 +26,6 @@
                     android:id="@+id/player2"
                     android:layout_gravity="end"
                     android:padding="10dp"/>
-        </TableRow>
-        <TableRow
-            android:padding="5dp">
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/score"
-                    android:id="@+id/score1"
-                    android:layout_gravity="start"
-                    android:padding="5dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/score"
-                    android:id="@+id/score2"
-                    android:layout_gravity="end"
-                    android:paddingRight="20dp"/>
-        </TableRow>
-        <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtScoreX"
-                    android:layout_column="0"
-                    android:layout_gravity="start" android:paddingLeft="10dp"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtScoreO"
-                    android:layout_column="1"
-                    android:layout_gravity="end"
-                    android:paddingRight="10dp"/>
         </TableRow>
     </TableLayout>
     <LinearLayout

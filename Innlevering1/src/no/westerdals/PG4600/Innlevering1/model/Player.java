@@ -6,7 +6,6 @@ package no.westerdals.PG4600.Innlevering1.model;
 public class Player {
     private String playerName;
     private char symbol;
-    private int score;
 
     public Player(String playerName, char symbol) {
         setPlayerName(playerName);
