@@ -30,9 +30,9 @@ public class GameBoardTest {
     public void testCheckWinVertical() throws Exception {
         Player player1 = new Player("Tester", 'X');
 
-        board.markCell(player1, 0, 0);
-        board.markCell(player1, 1, 0);
-        board.markCell(player1, 2, 0);
+        board.placeMark(player1, 0, 0);
+        board.placeMark(player1, 1, 0);
+        board.placeMark(player1, 2, 0);
 
         assertTrue(board.checkWinVertical());
     }
@@ -41,9 +41,9 @@ public class GameBoardTest {
     public void testDoesNotWinVerticalStoppedByPlayer2() throws Exception {
         Player player1 = new Player("Tester1", 'X');
         Player player2 = new Player("Tester2", 'O');
-        board.markCell(player1, 0, 0);
-        board.markCell(player2, 1, 0);
-        board.markCell(player1, 2, 0);
+        board.placeMark(player1, 0, 0);
+        board.placeMark(player2, 1, 0);
+        board.placeMark(player1, 2, 0);
 
         assertFalse(board.checkWinVertical());
     }
@@ -51,8 +51,8 @@ public class GameBoardTest {
     @Test
     public void testDoesNotWinVerticalDueToFreeCells() throws Exception {
         Player player1 = new Player("Tester1", 'X');
-        board.markCell(player1, 0, 0);
-        board.markCell(player1, 1, 0);
+        board.placeMark(player1, 0, 0);
+        board.placeMark(player1, 1, 0);
 
         assertFalse(board.checkWinVertical());
     }
@@ -60,9 +60,9 @@ public class GameBoardTest {
     @Test
     public void testCheckWinHorizontal() throws Exception {
         Player player1 = new Player("Tester", 'X');
-        board.markCell(player1, 0, 0);
-        board.markCell(player1, 0, 1);
-        board.markCell(player1, 0, 2);
+        board.placeMark(player1, 0, 0);
+        board.placeMark(player1, 0, 1);
+        board.placeMark(player1, 0, 2);
 
         assertTrue(board.checkWinHorizontal());
     }
@@ -72,7 +72,7 @@ public class GameBoardTest {
         Player player1 = new Player("Tester", 'O');
 
         for (int i = 0; i < ROWS; i++) {
-            board.markCell(player1, i, i);
+            board.placeMark(player1, i, i);
         }
 
         assertTrue(board.checkWinDiagonal());
@@ -82,9 +82,9 @@ public class GameBoardTest {
     public void testCheckWinLeftDiagonalReversed() throws Exception {
         Player player1 = new Player("Tester", 'O');
 
-        board.markCell(player1, 2, 2);
-        board.markCell(player1, 1, 1);
-        board.markCell(player1, 0, 0);
+        board.placeMark(player1, 2, 2);
+        board.placeMark(player1, 1, 1);
+        board.placeMark(player1, 0, 0);
 
         assertTrue(board.checkWinDiagonal());
     }
@@ -93,9 +93,9 @@ public class GameBoardTest {
     public void testCheckWinRightDiagonal() throws Exception {
         Player player1 = new Player("Tester", 'O');
 
-        board.markCell(player1, 0, 2);
-        board.markCell(player1, 1, 1);
-        board.markCell(player1, 2, 0);
+        board.placeMark(player1, 0, 2);
+        board.placeMark(player1, 1, 1);
+        board.placeMark(player1, 2, 0);
 
         assertTrue(board.checkWinDiagonal());
     }
@@ -104,9 +104,9 @@ public class GameBoardTest {
     public void testCheckWinRightDiagonalReversed() throws Exception {
         Player player1 = new Player("Tester", 'O');
 
-        board.markCell(player1, 2, 0);
-        board.markCell(player1, 1, 1);
-        board.markCell(player1, 0, 2);
+        board.placeMark(player1, 2, 0);
+        board.placeMark(player1, 1, 1);
+        board.placeMark(player1, 0, 2);
 
         assertTrue(board.checkWinDiagonal());
     }
@@ -115,16 +115,16 @@ public class GameBoardTest {
     public void testMarkCell() throws Exception {
         Player playerTest1 = new Player("Tester1", 'X');
 
-        assertTrue(board.markCell(playerTest1, 0, 0));
+        assertTrue(board.placeMark(playerTest1, 0, 0));
     }
 
     @Test
     public void testMarkCellWhenCellIsTakenReturnsFalse() throws Exception {
         Player playerTest1 = new Player("Tester1", 'X');
         Player playerTest2 = new Player("Tester2", 'X');
-        board.markCell(playerTest1, 0, 0);
+        board.placeMark(playerTest1, 0, 0);
 
-        assertFalse(board.markCell(playerTest2, 0, 0));
+        assertFalse(board.placeMark(playerTest2, 0, 0));
     }
 
     @Test
@@ -138,7 +138,7 @@ public class GameBoardTest {
 
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
-                assertTrue("Cant place marker at row " + i + ", column: " + j, board.markCell(player1, i, j));
+                assertTrue("Cant place marker at row " + i + ", column: " + j, board.placeMark(player1, i, j));
             }
         }
         assertTrue(board.isFull());

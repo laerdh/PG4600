@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Innlevering1</string>
+
+    <!-- Player symbols -->
     <string name="playerX">X</string>
     <string name="playerO">O</string>
     <string name="emptyCell"></string>
     <string name="action_settings">Test</string>
 
+    <!-- App top right menu -->
     <string name="newgame">New game</string>
     <string name="scoreboard">Scoreboard</string>
     <string name="back">Back</string>
+
+    <!-- GUI text -->
+    <string name="versus">vs.</string>
 </resources>

@@ -124,7 +124,7 @@ public class GameActivity extends Activity {
     }
 
     private void setCell(Player player, int row, int column) {
-        if (gameBoard.markCell(player, row, column)) {
+        if (gameBoard.placeMark(player, row, column)) {
             guiCells[row][column].setText(String.valueOf(player.getSymbol()));
 
             if (gameBoard.checkWin()) {

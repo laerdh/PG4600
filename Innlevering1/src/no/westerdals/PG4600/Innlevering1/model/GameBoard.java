@@ -9,7 +9,6 @@ public class GameBoard {
     private int cellsTaken = 0;
 
 
-
     public GameBoard() {
         init();
     }
@@ -62,7 +61,7 @@ public class GameBoard {
         return checkWinVertical() || checkWinHorizontal() || checkWinDiagonal();
     }
 
-    public boolean markCell(Player player, int row, int column) {
+    public boolean placeMark(Player player, int row, int column) {
         Cell cell = getCell(row, column);
             if (!cell.isTaken() && !isFull()) {
                 cell.setSymbol(player.getSymbol());
