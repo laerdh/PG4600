@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Player symbols (X/O) -->
     <style name="Mark">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">40sp</item>

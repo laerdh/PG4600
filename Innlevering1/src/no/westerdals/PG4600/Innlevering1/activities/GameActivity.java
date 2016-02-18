@@ -25,6 +25,7 @@ public class GameActivity extends Activity {
     private TextView txtStatus;
     private Player playerX, playerO;
     private boolean turn = true;
+    private boolean freeze = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -116,13 +117,16 @@ public class GameActivity extends Activity {
     }
 
     private void checkTurn(TableData tableData) {
-        if (turn) {
-            setCell(playerX, tableData.RowIndex, tableData.ColumnIndex);
-        } else {
-            setCell(playerO, tableData.RowIndex, tableData.ColumnIndex);
+        if (!freeze) {
+            if (turn) {
+                setCell(playerX, tableData.RowIndex, tableData.ColumnIndex);
+            } else {
+                setCell(playerO, tableData.RowIndex, tableData.ColumnIndex);
+            }
         }
     }
 
+    // Game logic
     private void setCell(Player player, int row, int column) {
         if (gameBoard.placeMark(player, row, column)) {
             guiCells[row][column].setText(String.valueOf(player.getSymbol()));
@@ -142,6 +146,7 @@ public class GameActivity extends Activity {
     }
 
     private void restartGame() {
+        freeze = true;
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -157,6 +162,7 @@ public class GameActivity extends Activity {
                 }
 
                 updateStatus();
+                freeze = false;
             }
         }, RESTART_GAME_DELAY);
     }

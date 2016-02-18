@@ -7,5 +7,7 @@
     <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/listView"/>
+            android:id="@+id/listView" android:transitionGroup="true" android:clickable="false"
+            android:gravity="center"
+            android:divider="@color/table_border" android:dividerHeight="1dp"/>
 </LinearLayout>
