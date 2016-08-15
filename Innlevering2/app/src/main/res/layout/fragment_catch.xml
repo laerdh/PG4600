@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:text="Catch a pokemon!"
+        android:id="@+id/textViewCatch"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/textViewKey"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextKey"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Insert key:"
+        android:id="@+id/textViewKey"
+        android:layout_above="@+id/editTextKey"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Catch!"
+        android:id="@+id/btnCatch"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_below="@+id/editTextKey"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
